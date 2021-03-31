@@ -73,6 +73,34 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
 
+    @Test
+    public void when_restaurant_menu_item_selected_return_correct_total_if_item_exists() throws noItemsInMenu {
+        //Tests the total of items - selected price is correct
+        // Here it is assumed all the items below are selected
+        restaurant = new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+
+        int total = restaurant.findTotalofItems(restaurant.getName());
+        assertEquals(total,388);
+
+
+    }
+
+
+    @Test
+    public void restaurant_menu_has_atleast_1_menu_item()  {
+        //Test case written to make sure the restaurant has atleast one menu item
+        // At run time even if restaurant is found, but no menu is not available always good to check on that
+
+        restaurant = new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
+        restaurant.addToMenu("Sweet corn soup",119);
+        int total = restaurant.getMenu().size();
+        //assertNotEquals(total,0);
+
+
+    }
+    //restaurant test class
 
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
