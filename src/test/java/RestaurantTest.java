@@ -96,11 +96,11 @@ class RestaurantTest {
         restaurant = new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
         restaurant.addToMenu("Sweet corn soup",119);
         int total = restaurant.getMenu().size();
-        //assertNotEquals(total,0);
+        assertNotEquals(total,0);
 
 
     }
-    //restaurant test class
+
 
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

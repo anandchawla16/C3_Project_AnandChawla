@@ -70,6 +70,19 @@ public class Restaurant {
         return name;
     }
 
+    public int findTotalofItems(String name) throws noItemsInMenu {
+        int total=0;
+
+
+        for(Item item:menu){
+            //System.out.println(item.getPrice());
+            total = total + item.getPrice();
+        }
+        if (total==0)
+            throw new noItemsInMenu(name);
+        return total;
+    }
+
 
 
 
